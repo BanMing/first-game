@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://c66f2tiagg1sr"]
 
+[ext_resource type="Script" uid="uid://bd0bxlq84buib" path="res://scripts/game_manager.gd" id="1_gee14"]
 [ext_resource type="PackedScene" uid="uid://b3hjlgmu1lcvb" path="res://scenes/player.tscn" id="1_uwrxv"]
+[ext_resource type="FontFile" uid="uid://cuhjqidghnmi2" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://dtdncmd6dus80" path="res://assets/sprites/world_tileset.png" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://dqa01xdajdmpt" path="res://scenes/platform.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://4y0iag1d8ktc" path="res://scenes/coin.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://btvetxn3a0nfn" path="res://scenes/killzone.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://60srmp8f1guv" path="res://scenes/slime.tscn" id="6_p57ef"]
+[ext_resource type="FontFile" uid="uid://jgv88f60q8tg" path="res://assets/fonts/PixelOperator8.ttf" id="7_u5sy4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yqjtg"]
 texture = ExtResource("2_yqjtg")
@@ -219,6 +222,20 @@ _data = {
 
 [node name="Game" type="Node2D" unique_id=1660715036]
 
+[node name="GameManager" type="Node" parent="." unique_id=722242839]
+unique_name_in_owner = true
+script = ExtResource("1_gee14")
+
+[node name="ScoreLabel" type="Label" parent="GameManager" unique_id=1451915423]
+offset_left = 38.0
+offset_top = -68.0
+offset_right = 86.0
+offset_bottom = -45.0
+theme_override_fonts/font = ExtResource("2_0tnpc")
+theme_override_font_sizes/font_size = 8
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="TileMap" type="TileMap" parent="." unique_id=1381348831]
 position = Vector2(-2, -2)
 tile_set = SubResource("TileSet_lnu2h")
@@ -265,3 +282,15 @@ position = Vector2(295, -79)
 
 [node name="slime" parent="." unique_id=1539922498 instance=ExtResource("6_p57ef")]
 position = Vector2(153, -12)
+
+[node name="Label" type="Label" parent="." unique_id=1886685406]
+offset_left = -80.0
+offset_top = -28.0
+offset_right = 92.0
+offset_bottom = -5.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("7_u5sy4")
+theme_override_font_sizes/font_size = 16
+text = "Space to jump"
+horizontal_alignment = 1
+vertical_alignment = 1
